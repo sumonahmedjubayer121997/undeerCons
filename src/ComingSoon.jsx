@@ -31,18 +31,13 @@ const ComingSoon = () => {
   }, []);
 
   return (
-    <div
-      className="flex flex-col items-center justify-center min-h-screen text-white p-6 relative bg-cover bg-center"
-      style={{
-        backgroundImage: `url('/backgrundimage.jpg')`, // Place the image in the "public" folder
-      }}
-    >
+    <div className="flex flex-col items-center justify-center min-h-screen text-white p-4 sm:p-6 md:p-8 relative bg-cover bg-center">
       {/* Dark Overlay for Readability */}
       <div className="absolute inset-0 bg-black bg-opacity-70"></div>
 
       {/* Header Icon */}
       <motion.div
-        className="text-6xl mb-4 relative z-10 text-yellow-400"
+        className="text-5xl sm:text-6xl md:text-7xl mb-4 relative z-10 text-yellow-400"
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
@@ -52,7 +47,7 @@ const ComingSoon = () => {
 
       {/* Main Heading */}
       <motion.h1
-        className="text-5xl md:text-7xl font-extrabold mb-4 text-center relative z-10"
+        className="text-3xl sm:text-5xl md:text-6xl font-extrabold mb-4 text-center relative z-10"
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
@@ -60,21 +55,21 @@ const ComingSoon = () => {
         🚧 Under Construction 🚧
       </motion.h1>
 
-      <p className="text-xl text-gray-300 text-center mb-8 relative z-10 max-w-xl">
-       I'm working hard to launch my new website! Stay tuned for updates.
+      <p className="text-md sm:text-lg md:text-xl text-gray-300 text-center mb-6 sm:mb-8 relative z-10 max-w-xl px-4">
+        I'm working hard to launch my new website! Stay tuned for updates.
       </p>
 
       {/* Countdown Timer */}
-      <div className="flex space-x-6 text-2xl mb-8 relative z-10">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-lg sm:text-xl md:text-2xl mb-6 sm:mb-8 relative z-10 w-full max-w-2xl">
         {["Days", "Hours", "Minutes", "Seconds"].map((label, index) => (
           <div
             key={label}
-            className="text-center bg-gray-800 p-4 rounded-lg shadow-lg"
+            className="flex flex-col items-center bg-gray-800 p-3 sm:p-4 rounded-lg shadow-lg w-full"
           >
-            <span className="block text-4xl font-bold text-yellow-400">
+            <span className="block text-3xl sm:text-4xl font-bold text-yellow-400">
               {Object.values(timeLeft)[index]}
             </span>
-            <span className="text-gray-300 text-sm">{label}</span>
+            <span className="text-gray-300 text-xs sm:text-sm">{label}</span>
           </div>
         ))}
       </div>
